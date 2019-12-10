@@ -97,9 +97,30 @@ class Employe
      */
     private $createdAt;
 
+    /**
+     * @return mixed
+     */
+    public function getSalaireDeBase()
+    {
+        return $this->salaire_de_base;
+    }
+
+    /**
+     * @param mixed $salaire_de_base
+     */
+    public function setSalaireDeBase($salaire_de_base)
+    {
+        $this->salaire_de_base = $salaire_de_base;
+    }
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $salaire_de_base;
+
     public function __toText()
     {
-        return 'id'. $this->id.'  '.'cin'.' '.$this->cin.'  '.'cnss'.' '.$this->cnss.'  '.'nom'.' '.$this->nom.'  '.'prenom'.' '.$this->prenom.'  '.'lieu_de_naissance'.' '.$this->lieu_de_naissance.'  '.'statut_familial'.' '.$this->statut_familial.'  '.'adresse'.' '.$this->adresse.'  '.'matricule'.' '.$this->matricule.'  '.'telephone'.' '.$this->telephone.'  '.'diplome'.' '.$this->diplome.'  '.'niveau_scolaire'.' '.$this->niveau_scolaire.'  '.'age'.' '.$this->age.'  '.'date_de_naissance'.' '.$this->date_de_naissance.'  '.'date_debut_travail'.' '.$this->date_debut_travail.'  '.'createdAt'.' '.$this->createdAt;
+        return 'id'. $this->id.'  '.'cin'.' '.$this->cin.'  '.'cnss'.' '.$this->cnss.'  '.'nom'.' '.$this->nom.'  '.'prenom'.' '.$this->prenom.'  '.'lieu_de_naissance'.' '.$this->lieu_de_naissance.'  '.'statut_familial'.' '.$this->statut_familial.'  '.'adresse'.' '.$this->adresse.'  '.'matricule'.' '.$this->matricule.'  '.'telephone'.' '.$this->telephone.'  '.'diplome'.' '.$this->diplome.'  '.'niveau_scolaire'.' '.$this->niveau_scolaire.'  '.'age'.' '.$this->age.' '.'salaire_de_base'.' '.$this->salaire_de_base;
     }
 
     public function getId(): ?int
