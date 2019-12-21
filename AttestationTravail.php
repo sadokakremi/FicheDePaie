@@ -33,7 +33,7 @@ class AttestationTravail
 
     public function __toText()
     {
-        return 'id'. $this->id.'  '.'date_impression'.' '.$this->date_impression;
+        return 'id'. $this->id.'  ';
     }
 
     /**

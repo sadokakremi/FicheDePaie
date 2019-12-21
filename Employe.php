@@ -60,7 +60,7 @@ class Employe
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $matricule;
+    public $matricule;
 
     /**
      * @ORM\Column(type="integer")
@@ -96,6 +96,29 @@ class Employe
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Salaire", mappedBy="salaires")
+     */
+    private $salaires;
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getSalaires()
+    {
+        return $this->salaires;
+    }
+
+    /**
+     * @param mixed $salaires
+     */
+    public function setSalaires($salaires)
+    {
+        $this->salaires = $salaires;
+    }
 
     /**
      * @return mixed
@@ -310,7 +333,8 @@ class Employe
 
     public function __toString()
     {
-        return $this->nom;    }
+        return $this->nom;
+    }
 
 
 }

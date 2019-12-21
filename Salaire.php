@@ -19,6 +19,15 @@ class Salaire
     private $id;
 
     /**
+     * Salaire constructor.
+     * @param $categorie_salaire
+     */
+    public function __construct()
+    {
+        $this->date_attribution_salaire = new \DateTime();
+    }
+
+    /**
      * @return mixed
      */
     public function getEmploye()
@@ -49,7 +58,7 @@ class Salaire
     /**
      * @ORM\Column(type="datetime")
      */
-    private $date_attribution_salaire;
+    private $date_attribution_salaire ;
 
     /**
      * @ORM\Column(type="integer")
@@ -163,17 +172,9 @@ class Salaire
         return $this;
     }
 
-    public function getMontantSalaire(): ?float
-    {
-        return $this->montant_salaire;
-    }
 
-    public function setMontantSalaire(float $montant_salaire): self
-    {
-        $this->montant_salaire = $montant_salaire;
 
-        return $this;
-    }
+
 
     public function getDateAttributionSalaire(): ?\DateTimeInterface
     {
@@ -199,15 +200,7 @@ class Salaire
         return $this;
     }
 
-    public function getBulletin(): ?BulletinDePaie
-    {
-        return $this->bulletin;
-    }
 
-    public function setBulletin(?BulletinDePaie $bulletin): self
-    {
-        $this->bulletin = $bulletin;
 
-        return $this;
-    }
+
 }
