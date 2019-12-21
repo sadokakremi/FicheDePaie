@@ -1,28 +1,28 @@
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<em>&nbsp; &nbsp; &nbsp; &nbsp; <span style="text-decoration: underline;">Fiche De Paie</span></em></p>
 <p><em>Mois de:&nbsp;</em></p>
-<p><em>Matricule:&nbsp;</em></p>
+<p><em>Matricule: {{ employe.matricule }}</em></p>
 <p>&nbsp;</p>
 <table style="height: 104px;" width="480">
     <tbody>
     <tr>
         <td style="width: 232px;">Nom &amp; Prenom</td>
-        <td style="width: 232px;">&nbsp;</td>
+        <td style="width: 232px;">{{ employe.nom }}   {{ employe.prenom }}</td>
     </tr>
     <tr>
         <td style="width: 232px;">N&deg;CNSS</td>
-        <td style="width: 232px;">&nbsp;</td>
+        <td style="width: 232px;">{{ employe.cnss }}</td>
     </tr>
     <tr>
         <td style="width: 232px;">Situation Familiale</td>
-        <td style="width: 232px;">&nbsp;</td>
+        <td style="width: 232px;">{{ employe.statutfamilial }}</td>
     </tr>
     <tr>
         <td style="width: 232px;">Qualification</td>
-        <td style="width: 232px;">&nbsp;</td>
+        <td style="width: 232px;">{{ employe.diplome }}</td>
     </tr>
     <tr>
         <td style="width: 232px;">Recrut&eacute; le</td>
-        <td style="width: 232px;">&nbsp;</td>
+        <td style="width: 232px;">{{ employe.datedebuttravail ? employe.datedebuttravail|date('Y-m-d') : '' }}</td>
     </tr>
     </tbody>
 </table>
@@ -38,16 +38,16 @@
     </tr>
     <tr style="height: 18px;">
         <td style="width: 161px; height: 18px;">Pr&eacute;sence th&eacute;orique du mois</td>
-        <td style="width: 134px; height: 18px;"></td>
+        <td style="width: 134px; height: 18px;">208</td>
         <td style="width: 121px; height: 18px;">&nbsp;</td>
         <td style="width: 115px; height: 18px;">&nbsp;</td>
         <td style="width: 116px; height: 18px;">&nbsp;</td>
     </tr>
     <tr style="height: 18px;">
         <td style="width: 161px; height: 18px;">Salaire base</td>
-        <td style="width: 134px; height: 18px;">&nbsp;</td>
+        <td style="width: 134px; height: 18px;">{{ employe.salairedebase }}</td>
         <td style="width: 121px; height: 18px;">&nbsp;</td>
-        <td style="width: 115px; height: 18px;">&nbsp;</td>
+        <td style="width: 115px; height: 18px;"></td>
         <td style="width: 116px; height: 18px;">&nbsp;</td>
     </tr>
     <tr style="height: 15px;">
