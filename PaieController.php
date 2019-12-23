@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Employe;
+use App\Entity\Salaire;
 use App\Repository\EmployeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,17 +11,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class PaieController extends AbstractController
 {
     /**
-     * @Route("/paie/{idemploye}/{periode}", name="paie")
+     * @Route("/paie/{idsalaire}", name="paie")
      */
-    public function index($idemploye,$periode)
+    public function index($idsalaire)
     {
 
-        $employe = $this->getDoctrine()
-            ->getRepository(Employe::class)
-            ->find($idemploye);
+        $salaire = $this->getDoctrine()
+            ->getRepository(Salaire::class )
+
+            ->find($idsalaire);
+
         return $this->render('paie/index.html.twig', [
-            'employe' => $employe,
-            'periode'=>$periode
+            'salaire' => $salaire
+
         ]);
     }
 }
