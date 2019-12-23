@@ -675,7 +675,10 @@ private $nbre_heures_travail;
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])
-            ->add('date_debut_travail')
+            ->add('date_debut_travail', DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('createdAt')
 
 
@@ -1443,7 +1446,10 @@ private $nbre_heures_travail;
         $attestationarrettravail = new AttestationArretTravail();
         $form= $this->createFormBuilder($attestationarrettravail)
             ->add('date_saisie')
-            ->add('date_arret')
+            ->add('date_arret', DateType::class, [
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('condition_arret')
             ->add('employe', EntityType::class,
                 [

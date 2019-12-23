@@ -102,6 +102,14 @@ class Employe
      */
     private $salaires;
 
+    /**
+     * Employe constructor.
+     * @param $createdAt
+     */
+    public function __construct()
+    {
+        $this->createdAt  = new \DateTime();
+    }
 
 
     /**

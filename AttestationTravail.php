@@ -31,6 +31,15 @@ class AttestationTravail
      */
     public $partresponsablepayement;
 
+    /**
+     * AttestationTravail constructor.
+     * @param $date_impression
+     */
+    public function __construct()
+    {
+        $this->date_impression = new \DateTime();
+    }
+
     public function __toText()
     {
         return 'id'. $this->id.'  ';

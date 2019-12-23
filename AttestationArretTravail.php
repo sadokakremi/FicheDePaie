@@ -41,6 +41,15 @@ class AttestationArretTravail
      */
     private $partresponsablepayement;
 
+    /**
+     * AttestationArretTravail constructor.
+     * @param $date_saisie
+     */
+    public function __construct()
+    {
+        $this->date_saisie = new \DateTime();
+    }
+
     public function __toText()
     {
         return 'id'. $this->id.'  '.'condition_arret'.' '.$this->condition_arret;
