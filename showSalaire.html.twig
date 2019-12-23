@@ -49,6 +49,7 @@
     <a href="{{ path('salaire_index') }}">retour à la liste</a>
 
     <a href="{{ path('salaire_edit', {'id': salaire.id}) }}">modifier</a>
+    <a href="{{ path('paie', {'id': salaire.id}) }}">Fiche De paie</a>
 
 
     <form method="post" action="{{ path('fiche_deleteSalaire', {'id': salaire.id}) }}" onsubmit="return confirm('Êtes-vous sûr ');">

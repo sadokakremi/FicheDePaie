@@ -11,15 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class PaieController extends AbstractController
 {
     /**
-     * @Route("/paie/{idsalaire}", name="paie")
+     * @Route("/paie/{id}", name="paie")
      */
-    public function index($idsalaire)
+    public function index($id)
     {
 
         $salaire = $this->getDoctrine()
             ->getRepository(Salaire::class )
 
-            ->find($idsalaire);
+            ->find($id);
 
         return $this->render('paie/index.html.twig', [
             'salaire' => $salaire
